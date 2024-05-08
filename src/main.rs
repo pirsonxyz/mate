@@ -1,4 +1,8 @@
-use sauss_cramer::{print_2_variables_result, solve_2_variables};
+mod ecs;
+
+use std::io;
+
+use ecs::solve_ecs;
 
 fn homotesia(points: &mut [f64; 2], axis: &str, quantity: f64) {
     println!("Puntos originales: ({}, {})", points[0], points[1]);
@@ -47,22 +51,7 @@ fn rotation(points: &mut [f64; 2], angle: f64) {
     points[1] = x * angle_d.sin() + y * angle_d.cos();
     println!("Puntos rotados: ({}, {})", points[0], points[1]);
 }
-fn main() {
-    let mut a = [-6.0, 3.0];
-    let mut b = [-4.0, 5.0];
-    let mut c = [0.0, 5.0];
-    let mut d = [-2.0, 3.0];
-
-    homotesia(&mut a, "origin", 2.0);
-    homotesia(&mut b, "origin", 2.0);
-    homotesia(&mut c, "origin", 2.0);
-    homotesia(&mut d, "origin", 2.0);
-
-    reflexion(&mut a, "x");
-    reflexion(&mut b, "x");
-    reflexion(&mut c, "x");
-    reflexion(&mut d, "x");
-
-    let result = solve_2_variables(1.0, 4.0, 1.0, 2.0, 27.0, 21.0);
-    print_2_variables_result(result);
+fn main() -> io::Result<()> {
+    solve_ecs().unwrap();
+    Ok(())
 }

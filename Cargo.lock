@@ -11,6 +11,6 @@ dependencies = [
 
 [[package]]
 name = "sauss-cramer"
-version = "1.0.0"
+version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3df34616edbed755e9b4cebf24295a5185a2a157c4cea2bfa83727e4c24b96de"
+checksum = "b5cf644b779ac0b9dabcadf5bc00b1687211210c6d0b1d743ab2154ff21e174e"
