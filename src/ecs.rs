@@ -6,7 +6,7 @@ use std::{
     io::{self, BufRead, BufReader, Result},
 };
 pub fn solve_ecs() -> Result<()> {
-    println!("Escribe la direccion del archivo");
+    println!("Escribe la direccion del archivo: ");
     let mut path = String::new();
     io::stdin().read_line(&mut path)?;
     let file = File::open(path.trim()).unwrap_or_else(|_| {
